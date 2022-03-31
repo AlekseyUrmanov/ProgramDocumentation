@@ -13,9 +13,9 @@ pub_client = None
 
 def auth():
     global auth_client, pub_client
-    key = '8811ae1f541f911b68394649c73d17e8'
-    secret = 's1L46eZRpoHdWYu6DcYROQugtgY7rrfGu7S/jUGEWMTIDUC2bgiV3c8FB1lxjVF3NHm9UnTL6U7p6A+Mptgjew=='
-    passphrase = 'omgvd80zrdr'
+    key = ''
+    secret = ''
+    passphrase = ''
 
     auth_client = cbpro.AuthenticatedClient(key=key, b64secret=secret, passphrase=passphrase)
     pub_client = cbpro.PublicClient()
@@ -501,12 +501,12 @@ def trading_engine(order_id):
 class MyWebsocketClient(cbpro.WebsocketClient):
     def on_open(self):
         self.url = "wss://ws-feed.pro.coinbase.com/"
-        self.products = ['ADA-USD']
-        self.channels = ['full', 'level2_50']  # 'user','ticker_1000','full','level2_50','level2_batch' is same as 50
+        self.products = [''] # 'XXX-USDformat'
+        self.channels = ['']  # 'user','ticker_1000','full','level2_50','level2_batch' is same as 50. l2v50, full to run
         self.auth = True
-        self.api_key = '8811ae1f541f911b68394649c73d17e8'
-        self.api_passphrase = 'omgvd80zrdr'
-        self.api_secret = 's1L46eZRpoHdWYu6DcYROQugtgY7rrfGu7S/jUGEWMTIDUC2bgiV3c8FB1lxjVF3NHm9UnTL6U7p6A+Mptgjew=='
+        self.api_key = ''
+        self.api_passphrase = ''
+        self.api_secret = ''
         self.should_print = False
         self.stime = datetime.datetime.now()
         self.is_on = True
@@ -521,24 +521,4 @@ class MyWebsocketClient(cbpro.WebsocketClient):
         print((datetime.datetime.now() - self.stime).seconds)
         self.is_on = False
         print("--cd--")
-
-
-try:
-
-    x = MyWebsocketClient()
-    x.start()
-
-    while True:
-        time.sleep(.3)
-        position_manager()
-
-        pass
-
-finally:
-
-    x.close()
-
-
-
-
 
