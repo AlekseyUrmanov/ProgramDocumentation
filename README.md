@@ -1,11 +1,12 @@
 # ProgramDocumentation
 
+### About
+As implied by the name *Bot9* is the nineth edition of my trading bot. It has major efficiency improvements over previous versions and many new functions. 
+
+
 ## Bot9 functions and variables
 
-### auth()
-Generates a public and privte endpoint connection with coinbase servers. Stores these references as variables to be used throughout the program.
-
-## global variables
+## IMPORTANT VARIABLES
 
 ### order_status_dict = {}
 Dictioniary off all open orders, with relative data
@@ -38,6 +39,9 @@ mean_order_size = 0
 total_orders = 0
 orders_per_min = 0
 
+## FUNCTIONS
 
+### auth()
+Generates a public and privte endpoint connection with coinbase servers. Stores these references as variables to be used throughout the program.
 
 
