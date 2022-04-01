@@ -25,5 +25,9 @@
     - 0.55 / 26.7 = 2.06% return
     - 2.06% return in 12 Hours
     - 2.06% return in 4 Hours of active trading
+  - Notes
+    - Im not sure why or how the program lost an order. This only happned in the last hour of trading
+    - The program has a tendancy to just group all the orders together into one price level. With no time between execution, between each other. I hope to develop some system that will keep orders seperate from each other and reduce the 'clumping' tendancy. 
+    - While the total run time of the program was 12 Hours, only 4 of those hours saw trading action. The remaining 8 hours were time intervaal were I was a holding a position 5-10% away from best ask. 
 ### Proof
 [SUPER_USD_TRADES.mov.zip](https://github.com/AlekseyUrmanov/ProgramDocumentation/files/8398129/SUPER_USD_TRADES.mov.zip)
